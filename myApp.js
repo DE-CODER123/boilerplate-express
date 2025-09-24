@@ -17,12 +17,14 @@ function sendFiles(req, res){
 }
 
 //send json files
-function sendJson(req, res){
- let messageObj = {"message": "Hello json"}
- if(process.env.MESSAGE_STYLE === "uppercase"){
-   let newMessage = messageObj.message.toUpperCase()
- }
- res.json({"message": newMessage})
+function sendJson(req, res) {
+  let messageObj = { message: "Hello json" };
+
+  if (process.env.MESSAGE_STYLE === "uppercase") {
+    messageObj.message = messageObj.message.toUpperCase();
+  }
+
+  res.json(messageObj);
 }
 
 app.use("/public", express.static(__dirname + "/public"));
