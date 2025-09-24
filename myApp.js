@@ -15,7 +15,7 @@ function sendFiles(req, res){
 }
 
 
-app.use(express.static(__dirname + /public/style.css));
+app.use(express.static(__dirname + "/public/style.css"));
 app.get('/', sendFiles)
 
 
