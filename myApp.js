@@ -15,7 +15,7 @@ function sendFiles(req, res){
 }
 
 
-app.use(express.static(__dirname + "/public"));
+app.use("/public", express.static(__dirname + "/public"));
 app.get('/', sendFiles)
 
 
