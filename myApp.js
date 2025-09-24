@@ -14,9 +14,13 @@ function sendFiles(req, res){
  res.sendFile(htmlFile)
 }
 
+function sendJson(req, res){
+ res.json({"message": "Hello json"} )
+}
 
 app.use("/public", express.static(__dirname + "/public"));
 app.get('/', sendFiles)
+app.get("/json", sendJson)
 
 
 
