@@ -21,9 +21,8 @@ function sendJson(req, res){
  let messageObj = {"message": "Hello json"}
  if(process.env.MESSAGE_STYLE === "uppercase"){
     newMessage = messageObj.message.toUpperCase()
-  let message = {"message": newMessage}
  }
- res.json(message)
+ res.json({"message": newMessage})
 }
 
 app.use("/public", express.static(__dirname + "/public"));
