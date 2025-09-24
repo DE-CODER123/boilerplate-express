@@ -20,7 +20,7 @@ function sendFiles(req, res){
 function sendJson(req, res){
  let messageObj = {"message": "Hello json"}
  if(process.env.MESSAGE_STYLE === "uppercase"){
-    newMessage = messageObj.message.toUpperCase()
+   let newMessage = messageObj.message.toUpperCase()
  }
  res.json({"message": newMessage})
 }
