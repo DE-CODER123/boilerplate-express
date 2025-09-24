@@ -23,7 +23,7 @@ function sendJson(req, res){
     newMessage = messageObj.message.toUpperCase()
   let message = {"message": newMessage}
  }
- res.json(newMessage)
+ res.json(message)
 }
 
 app.use("/public", express.static(__dirname + "/public"));
