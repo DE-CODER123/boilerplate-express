@@ -21,6 +21,7 @@ function sendJson(req, res){
  let messageObj = {"message": "Hello json"}
  if(process.env.MESSAGE_STYLE === "uppercase"){
     newMessage = messageObj.message.toUpperCase()
+  let message = {"message": newMessage}
  }
  res.json(newMessage)
 }
