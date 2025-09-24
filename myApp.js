@@ -14,6 +14,7 @@ function sendFiles(req, res){
  res.sendFile(htmlFile)
 }
 
+//send json files
 function sendJson(req, res){
  res.json({"message": "Hello json"} )
 }
