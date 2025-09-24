@@ -10,13 +10,12 @@ console.log("Hello World")
 // app.get("/", greet)
 
 function sendFiles(req, res){
- htmlFile = __dirname + '/views/index.html'
+ let htmlFile = __dirname + '/views/index.html'
  res.sendFile(htmlFile)
 }
-function styleSheet(){
- app.use(__dirname + "/public")
-}
-app.static("/", styleSheet)
+
+
+app.use(express.static(__dirname + "/public"));
 app.get('/', sendFiles)
 
 
