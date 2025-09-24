@@ -1,5 +1,7 @@
 let express = require('express');
 let app = express();
+require('dotenv').config();
+
 
 console.log("Hello World")
 
@@ -16,7 +18,11 @@ function sendFiles(req, res){
 
 //send json files
 function sendJson(req, res){
- res.json({"message": "Hello json"} )
+ let messageObj = {"message": "Hello json"}
+ if(process.env.MESSAGE_STYLE === "uppercase"){
+    newMessage = messageObj.message.toUpperCase()
+ }
+ res.json(newMessage)
 }
 
 app.use("/public", express.static(__dirname + "/public"));
